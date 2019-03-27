@@ -1,6 +1,6 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
+  "expoServerPort": null,
   "packagerPort": 19001,
   "packagerPid": 2432,
   "expoServerNgrokUrl": "https://ma-7j6.anonymous.react-native-todo-app.exp.direct",
