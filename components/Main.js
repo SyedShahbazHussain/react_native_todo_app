@@ -29,7 +29,7 @@ export default class Main extends React.Component {
           onChangeText={(noteText)=> this.setState({noteText})}
           value={this.state.noteText}
           placeholder='>note'
-          placeholderTextColor='White'
+          placeholderTextColor='white'
           underlineColorAndroid='transparent'>   
           </TextInput>
           </View>
