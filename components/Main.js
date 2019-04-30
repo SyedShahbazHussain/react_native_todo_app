@@ -23,6 +23,7 @@ export default class Main extends React.Component {
         <Text style ={styles.headerText}>-Noter-</Text>
           </View>
           <ScrollView style ={styles.scrollContainer}>
+            {notes}
           </ScrollView>
           <View style ={styles.footer}>
           <TextInput style ={styles.textInput}
@@ -42,7 +43,20 @@ export default class Main extends React.Component {
   }
 
   addNote(){
-      alert('test');
+      if(this.state.noteArray){
+        var d=new Date();
+        this.state.noteArray.push({
+          'date': d.getFullYear() + "/"+(d.getMonth()+1)+
+          "/" + d.getDate(),
+          'note': this.state.noteText
+        });
+        this.setState({noteArray: this.state.noteArray})
+        this.setState({noteText:''});
+      }
+  }
+  deleteNote(key){
+    this.state.noteArray.splice(key, 1);
+    this.setState({noteArray: this.state.noteArray})
   }
 }
 
@@ -88,8 +102,8 @@ export default class Main extends React.Component {
       right: 20,
       bottom: 90,
       backgroundColor: "#e91e63",
-      width: 90,
-      height: 90,
+      width: 55,
+      height: 55,
       borderRadius: 59,
       alignItems: "center",
       justifyContent: "center",
